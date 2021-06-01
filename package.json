@@ -1,7 +1,10 @@
 {
   "name": "test-microfe",
   "version": "1.0.0",
-  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack/index.js",
+    "dev": "webpack server --config webpack/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git@mtl-gitlab.mgcorp.co:c_sobey/test-microfe.git"
@@ -36,5 +39,10 @@
     "source-map-loader": "^3.0.0",
     "style-loader": "^2.0.0",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
