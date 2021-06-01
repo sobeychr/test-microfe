@@ -3,6 +3,6 @@ import React from 'react';
 import Router from './router';
 import './style';
 
-const App = () => <Router />;
+const MainApp = () => <Router />;
 
-export default App;
+export default MainApp;

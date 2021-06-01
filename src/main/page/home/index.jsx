@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { MicroFrontEnd } from '@mainComponent';
+
 const HomePage = () => (
     <>
         <header>
@@ -9,6 +11,7 @@ const HomePage = () => (
                 <span>Home</span>
                 <Link to='/about'>About</Link>
             </nav>
+            <MicroFrontEnd name='nav' />
         </header>
         <main>
             <p>

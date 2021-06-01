@@ -1,3 +1,4 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 const rootPath = path.resolve(__dirname, './../') + '/';
@@ -5,6 +6,7 @@ const rootPath = path.resolve(__dirname, './../') + '/';
 const publicPath = rootPath.concat('public/');
 
 const srcPath = rootPath.concat('src/');
+const commonPath = srcPath.concat('common/');
 const mainPath = srcPath.concat('main/');
 const navPath = srcPath.concat('nav/');
 
@@ -14,7 +16,7 @@ module.exports = {
         nav: `${navPath}index.jsx`,
     },
     output: {
-        filename: '[name].js',
+        filename: '[name].bundle.js',
         path: publicPath,
         // publicPath: '/',
     },
@@ -22,6 +24,7 @@ module.exports = {
         bonjour: true,
         compress: true,
         contentBase: publicPath,
+        historyApiFallback: true,
         host: '0.0.0.0',
         hot: true,
         inline: true,
@@ -54,10 +57,19 @@ module.exports = {
         ],
     },
 
+    plugins: [
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['**/*', '!index.html'],
+        }),
+    ],
+
     resolve: {
         extensions: ['.js', '.jsx', '.scss', '.json'],
-        modules: [mainPath, navPath, 'node_modules'],
+        modules: [commonPath, mainPath, navPath, 'node_modules'],
         alias: {
+            '@common': commonPath,
+
+            '@mainComponent': mainPath.concat('component/'),
             '@mainCore': mainPath.concat('core/'),
             '@mainPage': mainPath.concat('page/'),
         },
