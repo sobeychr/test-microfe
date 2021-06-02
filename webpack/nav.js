@@ -1,3 +1,5 @@
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+
 const {
     configs,
     paths: { publicPath, srcPath },
@@ -22,6 +24,13 @@ module.exports = {
         filename: 'nav.bundle.js',
         path: publicNavPath,
     },
+    plugins: [
+        ...configs.plugins,
+        new WebpackManifestPlugin({
+            fileName: 'asset-manifest.json',
+            publicPath: '',
+        }),
+    ],
     resolve: {
         ...configs.resolve,
         modules: [commonPath, navPath, 'node_modules'],
