@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { MicroFrontEnd } from '@mainComponent';
+import { MicroFrontEnd } from '@component';
 
 const HomePage = () => (
     <>

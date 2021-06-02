@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { AboutPage, HomePage } from '@mainPage';
+import { AboutPage, HomePage } from '@page';
 
 const Router = () => (
     <BrowserRouter>

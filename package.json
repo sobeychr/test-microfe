@@ -2,8 +2,9 @@
   "name": "test-microfe",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config webpack/index.js",
-    "dev": "webpack server --config webpack/index.js"
+    "build": "webpack --config webpack/main.js",
+    "devMain": "webpack server --config webpack/main.js",
+    "devNav": "webpack server --config webpack/nav.js"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-plugin-module-federation": "^1.0.0-beta-1"
   }
 }
