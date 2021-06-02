@@ -2,7 +2,7 @@
   "name": "test-microfe",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config webpack/nav.js",
+    "build": "webpack --config webpack/nav.build.js",
     "devMain": "webpack server --config webpack/main.js",
     "devNav": "webpack server --config webpack/nav.js"
   },

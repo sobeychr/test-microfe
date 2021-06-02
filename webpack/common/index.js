@@ -13,6 +13,11 @@ module.exports = {
         publicPath,
         srcPath,
     },
+    mapContentBase: (list) => {
+        const contentBase = list.map(({ path }) => path);
+        const contentBasePublicPath = list.map(({ public }) => public);
+        return { contentBase, contentBasePublicPath };
+    },
     configs: {
         devServer: {
             bonjour: true,
