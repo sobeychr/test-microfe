@@ -19,7 +19,7 @@ module.exports = {
         publicPath: '',
     },
     plugins: [
-        ...configs.plugins,
+        ...navConfigs.plugins,
         new WebpackManifestPlugin({
             fileName: 'asset-manifest.json',
             filter: ({ name }) => !name.endsWith('.map'),

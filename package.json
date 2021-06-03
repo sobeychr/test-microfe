@@ -2,9 +2,13 @@
   "name": "test-microfe",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config webpack/nav.build.js",
-    "devMain": "webpack server --config webpack/main.js",
-    "devNav": "webpack server --config webpack/nav.js"
+    "build": "run-p buildMain buildNav",
+    "dev": "run-p buildNav devMain",
+    "server": "nodemon --delay 2.5 ./script/server/index.js localhost 3000",
+    "buildMain": "webpack --config script/webpack/main.build.js",
+    "buildNav": "webpack --config script/webpack/nav.build.js",
+    "devMain": "webpack server --config script/webpack/main.js",
+    "devNav": "webpack server --config script/webpack/nav.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,7 @@
     "lodash": "^4.17.21",
     "node-sass": "^6.0.0",
     "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.3.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

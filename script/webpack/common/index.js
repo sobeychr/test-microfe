@@ -1,7 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
-const rootPath = path.resolve(__dirname, './../../') + '/';
+const rootPath = path.resolve(__dirname, './../../../') + '/';
 
 const publicPath = rootPath.concat('public/');
 
@@ -9,15 +9,18 @@ const srcPath = rootPath.concat('src/');
 const commonPath = srcPath.concat('common/');
 
 module.exports = {
+    // easy access to directories
     paths: {
         publicPath,
         srcPath,
     },
+    // eases mapping 'contentBase' & 'contentBasePublicPath' configs
     mapContentBase: (list) => {
         const contentBase = list.map(({ path }) => path);
         const contentBasePublicPath = list.map(({ public }) => public);
         return { contentBase, contentBasePublicPath };
     },
+    // Webpack configs
     configs: {
         devServer: {
             bonjour: true,
